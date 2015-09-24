@@ -1,0 +1,20 @@
+<section ng-controller="ChannelsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Channels</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="channel in channels" ui-sref="channels.view({channelId: channel._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="channel.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="channel.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="channel.title"></h4>
+      <p class="list-group-item-text" ng-bind="channel.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="channels.$resolved && !channels.length">
+    No channels yet, why don't you <a ui-sref="channels.create">create one</a>?
+  </div>
+</section>
