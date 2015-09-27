@@ -6,7 +6,7 @@
         <form name="channelForm" class="form-horizontal" ng-submit="create(channelForm.$valid)" novalidate>
             <fieldset>
                 <div class="form-group" show-errors>
-                    <label for="title">Title</label>
+                    <label for="title">Channel name</label>
                     <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
                     <div ng-messages="channelForm.title.$error" role="alert">
                         <p class="help-block error-text" ng-message="required">Channel title is required.</p>
